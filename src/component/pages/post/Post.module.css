@@ -1,0 +1,23 @@
+.postLayout{
+    padding: 1rem 2rem;
+}
+
+.titleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postCard{
+    margin: 10px 0;
+}
+
+.title{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .postLayout{
+        padding: .5rem 1rem;
+    }
+}

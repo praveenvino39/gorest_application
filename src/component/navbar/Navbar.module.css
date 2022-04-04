@@ -1,0 +1,50 @@
+.appNameContainer{
+    display: flex;
+    align-items: center;
+}
+
+.appName{
+    margin: 10px 20px;
+}
+
+
+.desktopNavContainer{
+    margin-top: 10px;
+    padding: 0 .2rem;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+}
+
+
+.navTitle:hover{
+    background-color: rgba(250, 128, 114, 0.18);
+    transition: all .5s;
+    cursor: pointer;
+}
+.btnMenu{
+    display: none;
+}
+
+
+@media screen and (max-width: 550px) {
+    .btnMenu{
+        display: flex;
+        border-radius: 5px;
+        margin-left: 1rem;
+        padding: 10px 10px;
+    }
+
+    .btnMenu:hover{
+        cursor: pointer;
+        background-color: rgba(128, 128, 128, 0.24);
+        transition: all .3s;
+    }
+    .desktopNavContainer{
+        display: none;
+    }
+}

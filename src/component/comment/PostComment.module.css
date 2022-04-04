@@ -1,0 +1,30 @@
+.comment{
+    margin-top: 10px;
+}
+
+.commentName{
+    padding: 0;
+    font-weight: bold;
+}
+
+.commentBody{
+    padding: 0;
+}
+
+.commentContainer{
+    margin-top: 5px;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.39);
+    padding: 10px 10px;
+}
+
+.commentHeader{
+    display: flex;
+    justify-content: space-between;
+}
+.commentIcon{
+    margin: 0 5px;
+}
+.commentActions{
+    display: flex;
+}

@@ -1,0 +1,22 @@
+.dasboardLayout {
+    margin: 20px 30px;
+    flex: 1;
+    display: grid;
+    grid-column-gap: 4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+
+@media screen and (max-width: 880px) {
+    .dasboardLayout{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dasboardLayout{
+        grid-template-columns: 1fr;
+        margin: 7px;
+    }
+}

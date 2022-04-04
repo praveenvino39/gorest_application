@@ -1,0 +1,13 @@
+.cardContainer{
+    width: 100%;
+    display: grid;
+}
+.count{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.skeletonTitle{
+    width: 100%;
+}
