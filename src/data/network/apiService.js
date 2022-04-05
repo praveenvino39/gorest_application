@@ -9,19 +9,19 @@ const instance = axios.create({
 
 const apiService = {
     allPost: async () => {
-        return await instance.get("users/4850/posts")
+        return await instance.get("users/4258/posts")
     },
     allComment: async () => {
         return await instance.get("comments")
     },
     allTodo: async () => {
-        return await instance.get("users/4850/todos")
+        return await instance.get("users/4258/todos")
     },
     postComment: async () => {
-        return await instance.post("users/4850/comments")
+        return await instance.post("users/4258/comments")
     },
     addPost: async (data) => {
-        return await instance.post("users/4850/posts", data)
+        return await instance.post("users/4258/posts", data)
     },
     updatePost: async (data) => {
         return await instance.patch(`posts/` + data.id, data)
@@ -39,7 +39,7 @@ const apiService = {
         return await instance.delete(`posts/` + data)
     },
     addTodo: async (data) => {
-        return await instance.post("users/4850/todos", data)
+        return await instance.post("users/4258/todos", data)
     },
     updateTodo: async (data) => {
         return await instance.patch("todos/" + data.id, data)
