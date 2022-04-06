@@ -1,25 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Checkbox, Col, Form, Input, Modal, Row} from "antd";
 import {Select} from 'antd';
 import {useDispatch} from "react-redux";
 import {createUser} from "../../data/actions/authAction";
 import Styles from './CreateUser.module.css';
+import {localService} from "../../data/local/sessionManager";
+import {useHistory} from "react-router-dom";
 
 const {Option} = Select
 
 const CreateUser = () => {
     const dispatch = useDispatch()
+    const navigator = useHistory()
     const handleCreateUser = (e) => {
         dispatch(createUser({...e, status: "active"}))
     }
+    useEffect(() => {
+        if (localService.getUserId()) {
+            navigator.push("/")
+        }
+    }, [])
     return (
         <div>
 
             <Modal
-
                 title="Create User"
                 visible={true}
-                okButtonProps={{htmlType: "submit"}}
                 onOk={(e) => handleCreateUser(e)}
                 footer={[]}
                 closable={false}
@@ -58,9 +64,9 @@ const CreateUser = () => {
                         </Select>
                     </Form.Item>
                     <div className={Styles.btnContainer}>
-                            <Button className={Styles.submitButton} type="primary" htmlType="submit">
-                                Submit
-                            </Button>
+                        <Button type="primary" htmlType="submit">
+                            Submit
+                        </Button>
                     </div>
                 </Form>
             </Modal>

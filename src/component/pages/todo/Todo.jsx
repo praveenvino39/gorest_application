@@ -10,6 +10,7 @@ import {todoSelector} from "../../../data/reducers/todoReducer";
 import {getTodos} from "../../../data/actions/todoAction";
 import AddTodo from "../../add_todo/AddTodo";
 import TodoCard from "../../todo_card/TodoCard";
+import {Button, Empty} from "antd";
 
 const Todo = () => {
     const todos = useSelector(todoSelector).todos
@@ -22,11 +23,13 @@ const Todo = () => {
         <AddTodo type="create" visibility={visibility} setVisiblity={setVisibility}/>
         <div className={Styles.titleContainer}>
             <h1>Todo</h1>
-            <PlusCircleOutlined onClick={() => setVisibility(!visibility)}/>
+            <Button type="primary" shape="circle" onClick={() => setVisibility(!visibility)}
+                    icon={<PlusCircleOutlined/>} size="large"/>
+
         </div>
-        {todos.map((element) => <div key={element.id}>
+        {todos.length > 0 ? todos.map((element) => <div key={element.id}>
             <TodoCard key={element.id} {...element} />
-        </div>)}
+        </div>) : <Empty/>}
     </div>);
 };
 

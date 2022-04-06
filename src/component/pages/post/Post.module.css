@@ -4,12 +4,18 @@
 
 .titleContainer{
     display: flex;
+    margin-top: 10px;
     justify-content: space-between;
     align-items: center;
 }
 
 .postCard{
     margin: 10px 0;
+}
+.emptyContainer{
+    display: grid;
+    grid-template-columns:  1fr;
+    place-items: center;
 }
 
 .title{

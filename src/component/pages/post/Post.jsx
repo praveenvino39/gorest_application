@@ -1,16 +1,12 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {postSelector} from "../../../data/reducers/postReducer";
 import {getPosts} from "../../../data/actions/postAction";
-import {Card, Collapse} from "antd";
+import {Button, Card, Collapse, Empty, Tooltip} from "antd";
 import Styles from './Post.module.css'
 import AddPost from "../../add_post/AddPost";
-import {FileTextOutlined, EditOutlined, PlusCircleOutlined} from "@ant-design/icons";
+import {FileTextOutlined, EditOutlined, PlusCircleOutlined, SearchOutlined, PlusCircleFilled} from "@ant-design/icons";
 import PostCard from "../../post_card/PostCard";
 import Select from 'react-select'
-
-
-const {Panel} = Collapse;
 
 
 const Post = () => {
@@ -30,13 +26,20 @@ const Post = () => {
         <div className={Styles.postLayout}>
             <AddPost type="create" visibility={visibility} setVisiblity={setVisibility}/>
             <Select placeholder="Search Here" options={searchableposts}/>
+
             <div className={Styles.titleContainer}>
                 <h1>POST</h1>
-                <PlusCircleOutlined onClick={() => setVisibility(!visibility)}/>
+                <Button type="primary" shape="circle" onClick={() => setVisibility(!visibility)}
+                        icon={<PlusCircleOutlined/>} size="large"/>
+
             </div>
-            {posts.map((element) => <div key={element.id}>
-                <PostCard {...element} />
-            </div>)}
+
+            {posts.length > 0 ?
+                posts.map((element) => <div key={element.id}>
+                    <PostCard {...element} />
+                </div>)
+                : <Empty/>
+            }
         </div>);
 };
 
