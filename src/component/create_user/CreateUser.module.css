@@ -1,0 +1,17 @@
+.createUserLayout{
+    margin: 10px 50px;
+
+}
+
+.formContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+}
+.btnContainer{
+    display: grid;
+    place-items: center;
+}

@@ -15,7 +15,7 @@ const DashboardCard = (props) => {
 
     return (
         <div className={Styles.cardContainer}>
-            <Card title={props.title} extra={<PlusCircleOutlined onClick={() => navigator.push(`/${props.route}`)}/>} >
+            <Card title={props.title}  >
                     <p className={Styles.count}>{props.count}</p>
 
             </Card>
